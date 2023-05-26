@@ -1,7 +1,9 @@
 {:paths ["src" "resources"]
  :deps {org.clojure/clojure {:mvn/version "1.12.0-alpha3"}
-       io.github.nextjournal/clerk {:git/sha "5e875e256a28a6deabf27bd6fc20f44cee5dad20" #_ #_ :mvn/version "0.13.842"}
-       io.github.nextjournal/clerk-slideshow {:git/sha "977003e581d78f4f554bb8ae73f877f4070925c3"}
-       org.babashka/sci {:mvn/version "0.7.39"}
+        io.github.nextjournal/clerk {:git/sha "4b959dff5c26d0edba14456f2061ec639af7f11b"
+                                     ;;:git/sha "5e875e256a28a6deabf27bd6fc20f44cee5dad20"
+                                     #_ #_ :mvn/version "0.13.842"}
+        io.github.nextjournal/clerk-slideshow {:git/sha "977003e581d78f4f554bb8ae73f877f4070925c3"}
+        org.babashka/sci {:mvn/version "0.7.39"}
        }
  :aliases {}}

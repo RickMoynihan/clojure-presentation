@@ -2,15 +2,16 @@
   (:require [nextjournal.clerk :as clerk]))
 
 
+(comment
 ;; start Clerk's built-in webserver on the default port 7777, opening the browser when done
 ;;(clerk/serve! {:browse? true})
 
 ;; either call `clerk/show!` explicitly
-(clerk/show! "notebooks/clojure_presentation.clj")
+;;(clerk/show! "notebooks/clojure_presentation.clj")
 
 ;; or let Clerk watch the given `:paths` for changes
-(clerk/serve! {:browse? true
-               :watch-paths ["notebooks"]})
+  (clerk/serve! {:browse? true
+                 :watch-paths ["notebooks"]})
 
 ;; start with watcher and show filter function to enable notebook pinning
 ;;(clerk/serve! {:watch-paths ["notebooks" "src"] :show-filter-fn #(clojure.string/starts-with? % "notebooks")})
@@ -18,3 +19,5 @@
 ;; Build a html file from the given notebook notebooks.
 ;; See the docstring for more options.
 ;;(clerk/build! {:paths ["notebooks/rule_30.clj"]})
+
+  )

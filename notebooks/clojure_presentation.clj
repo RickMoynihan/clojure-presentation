@@ -9,7 +9,6 @@
 ^{::clerk/visibility {:code :hide :result :hide}}
 (clerk/add-viewers! [slideshow/viewer])
 
-
 ^{::clerk/visibility {:code :hide :result :hide}}
 (def editor-sync-viewer
   {:evaluator :sci
@@ -58,134 +57,9 @@
                                              (.render mermaid (str (gensym)) value #(set! (.-innerHTML el) %))))}])]))})
 
 
-;; ---
-;; ![](https://ask.clojure.org/icons/clojure200.png)
-;; # Functional Programming Clojure at TPXImpact
-;;
-;; Rick Moynihan
-;;
-;; Head of Engineering (Data & Insights)
-
-;; ---
-;; # 👋 About me
-;;
-;; - Over 20 years Software Engineering
-;; - Worked for
-;;   - 4 startups
-;;   - One agency
-;; - Spent the last decade at Swirrl
-;;    - Working on data infrastructure & services for government
-;;
-;; - ... and now TPXImpact
-
-
-;; ---
-;; # I want to convince you of three things
-
-;; ---
-;; # 1. Clojure is a boring language
-
-;; ---
-;; # 1. Clojure is a boring language
-;;
-;; _* boring enough that you could possibly use it at work_
-
-
-;; ---
-;; # 2. Clojure is full of big contrarian ideas, which are interesting and exciting...
-
-;; ---
-;; # 2. ... and learning it may radically change your approach to software development and data _*_
-;;
-;; _* for the better_
-
-;; ---
-;; # 3. And finally that programming in Clojure is a lot of fun
-
-
-;; ---
-;; # What is Clojure?
-;;
-;; - A modern functional programming language in the Lisp family of languages
-;; - Created in 2007
-;; - Open source
-;; - Compiles to Java and Runs on the JVM
-;; - Dynamically typed
-;; - Created and led by Rich Hickey
-;; - Has a strong development philosophy behind it
-
-;; ---
-;; # What else is Clojure?
-;;
-;; - ... a small but vibrant open-source community
-;; - a dialect of similar "hosted languages"
-;;    - [Clojure](https://clojure.org/)
-;;    - [Clojurescript](https://clojurescript.org/)
-;;    - [Small Clojure Interpreter](https://github.com/babashka/sci) & [Babashka](https://babashka.org/)
-;;    - [ClojureCLR](https://github.com/clojure/clojure-clr)
-;;    - [Clojure Dart](https://github.com/Tensegritics/ClojureDart)
-
-;; ---
-;; # What else is Clojure?
-;;
-;; - Many big ideas carefully composed together
-;; - A case study in simplicity, elegance and design
-
-;; ---
-;; # Chapter 1: A boring language
-
-;; ---
-;; # Chapter 1: A boring language
-;;
-;; - Most of Clojure Core Team work for Nubank
-;; - Nubank have built their business on Clojure (thousands of systems)
-;; - It's reliable and predictable
-;; - Host language (java) interop is great so there are usable libraries available for almost everythingb
-
-;; ---
-;; # Chapter 1: A boring language
-;;
-;; - It changes slowly and purposefully (roughly one stable release p/year)
-;;   - Improvements are well thought out and conservative
-;; - Follows a strong philosophy of not making breaking changes
-;;   - See Rich Hickey's talk [Spec-ulation](https://www.youtube.com/watch?v=oyLBGkS5ICk)
-;;   - Two kinds of change
-;;     - Growth (accretion, relaxation, fixation)
-;;     - Breakage (requiring more or providing less)
-;;   - Embodied in tools.deps (package manager) version resolution
-;;   - language features like namespaced keywords / clojure.spec etc
-;; - The libraries and community tend to follow this advice
-;;   - It's not unusual to update every dependency in a legacy apps and have them still work
-
-;; ---
-;;
-;; # Chapter 2: Contrarian, interesting and exciting
-
-
-;; ---
-;; # Big ideas
-;;
-;; 1. Lisp
-;; 2. The value of values
-;; 3. Programming as a dialogue
-;; 4. Simplicity (a rigorous definition)
-;; 5. Inside out programming
-;; 6. Homoiconic Representation
-;; 7. Hosted languages
-;; 8. Move slow and purposefully, don't break things
-
-
-
-;; ---
-;;
-;; # Chapter 2.1: The legends of Lisp
-
-;; ---
-;; # A biased history of Programming Languages*
-;;
-^{::clerk/visibility {:code :hide}}
-(clerk/with-viewer mermaid-viewer {:nextjournal.clerk/width :full}
-"gantt
+^{::clerk/visibility {:code :hide :result :hide}}
+(def plt-history-timeline
+              "gantt
   dateFormat YYYY
   axisFormat %Y
 
@@ -202,13 +76,149 @@
 
   section Imperative
     Turing Machine : milestone, m2, 1936, 2min
-    Fortran : milestone, m4, 1956, 2min
+    Fortran : milestone, m4, 1957, 2min
     C : milestone, m9, 1972, 2min
     Smalltalk : milestone, m112, 1972, 2min
     Java / JVM : milestone, m10, 1995, 2min
     Rust : milestone, m13, 2010, 2min
 ")
-;; _* The majority of the world focussed on the mechanistic/imperative approach, but there was huge innovation and clarity of thinking on the functional side_
+
+;; ---
+;; ![Clojure Logo](https://ask.clojure.org/icons/clojure200.png)
+;; # Opening Two Doors to Great Ideas
+;; (Functional Programming & Clojure)
+;;
+;; Rick Moynihan
+;;
+;; Head of Engineering (Data & Insights)
+
+;; ---
+;; # `#cop_tech_fp`
+;;
+;; - A new community of practice, populated by myself and my colleagues
+;; - To talk about Functional Programming (and adjacent topics)
+;; - And spread the love of lambda
+;; - Please join, and post any questions you have there
+;; - I can stop and answer questions along the way
+
+;; ---
+;; # 👋 Who am I anyway?
+;;
+;; - Rick Moynihan (Head of Engineering in D&I)
+;; - Over 20 years Software Engineering
+;; - Worked for
+;;   - 4 startups
+;;   - One agency
+;; - Spent the last decade at Swirrl
+;;    - Working on data infrastructure & services for government
+;;
+;; - ... and now TPXImpact
+;; - Have been using Clojure for real work since 2008
+
+;; ---
+;; # My Agenda
+;;
+^{::clerk/visibility {:code :hide}}
+(clerk/with-viewer mermaid-viewer {:nextjournal.clerk/width :full}
+  plt-history-timeline)
+;; PL history has two streams (actually more but this is rhetoric, so I can lie and call it simplicity!)
+;;
+;; I'm assuming most people here, like most of the industry are on the imperative side.
+;;
+;; I'd like to do one thing, and excite, and encourage you to explore ideas on the functional side.
+
+;; ---
+;; # My impossible task
+;;
+;; - Functional Programming and Clojure are both golden gates into a rich seam of ideas.
+;; - The ideas can challenge your deepest held assumptions about the craft of software,
+;; - ...including assumptions on the nature of computation, design, systems, simplicity, and complexity itself.
+
+;; ---
+;; # (1962) Thomas Kuhn's theory of scientific revolutions
+;;
+;; - Introduced the ideas of Paradigms & Paradigm shifts
+
+;; ---
+;; # Incommensurability of paradigms
+;;
+;; - A barrier to crossing from the imperative paradigm to functional is that from the perspective of just one paradigm you can't objectively compare the other.
+;; - You need to learn the other paradigm to discover what the fuss is about
+;; - Learning paradigm's is hard because they fundamentally change your terms of reference
+;;
+^{::clerk/visibility {:code :hide}}
+(clerk/with-viewer mermaid-viewer {:nextjournal.clerk/width :full}
+  plt-history-timeline)
+
+;; ---
+;; # My impossible task
+;;
+;; - The other reason this is hard, is there's so much cool stuff to talk about!
+;; - Potentially over 80 years worth of cool stuff!
+;; - So I don't have time to go into anything too much
+;; - I'm just going to throw lots of things I think are cool at you, and hope something resonates!
+
+;; ---
+;; # But maybe, it's easier than I make out...
+;;
+;; - ... because the stuff I'll show you is probably _simpler_ than you're used to 👍
+
+;; ---
+;; # but beware Simple != Easy
+;;
+;; - Rich Hickey (Clojure's creator) offers a [rigorous definition of simplicity](https://github.com/matthiasn/talk-transcripts/blob/master/Hickey_Rich/SimpleMadeEasy.md).
+;; - We confuse Simple with Easy all the time
+;; - To make things simple means:
+;;   - To "decomplect", to tear apart, to isolate
+;;   - individual concepts
+;; - To make things easy means:
+;;   - To have them to hand
+;;   - To make them familiar
+;;   - Frequently also to combine things together
+;;
+;; - Confusing these things causes huge problems
+;;
+
+;; ---
+;; # Simple is often hard but not complex
+;;
+;; - You might simplify something by turning into 5 separate isolated things
+;; - You will have more things to deal with
+;; - But they will be more reusable, combinable, useful and understandable
+;; - No silver bullets, but being mindful of these trade-offs prevents many problems
+
+;; ---
+;; # Simple Made Easy
+;;
+;; - If you only take away one idea, it should probably be this one
+;; - Watch this talk or [read the transcript](https://github.com/matthiasn/talk-transcripts/blob/master/Hickey_Rich/SimpleMadeEasy.md)
+;;
+;;
+^{::clerk/visibility {:code :hide}}
+(clerk/html "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/LKtk3HCgTa8\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>")
+
+;; ---
+;; # Simple != Easy
+;;
+;; - It's no surprise that Rich Hickey (a Functional Programmer and Lisp developer) observed this
+;; - As Lisp and the roots of Functional Programming implicitly treat simplicity in this way
+
+;; ---
+;; # Learning this stuff is a simple way to...
+;;
+;; 1. Sound a lot smarter than you are
+;; 2. Eventually (with some effort) become smarter than you were
+;;    - One day you wake up and realise you did things you thought would always be beyond you
+;; 3. Gives you a new level of confidence
+
+;; ---
+;;
+;; # The legends of Lisp
+
+;; ---
+;;
+;; ![Lisp Cycles](https://imgs.xkcd.com/comics/lisp_cycles.png)
+
 
 ;; ---
 ;; # Lisp (1956) John Mccarthy
@@ -238,55 +248,16 @@
 ;;
 ;; - Embodies the essential minimal essence of what it means to compute
 ;; - Makes it trivially easy to extend the language and compiler
-;; - Liberates programming language development out of the domain of computer scientists in ways practitioners can understand.  See the book [Lisp in Small Pieces](https://www.amazon.co.uk/Lisp-Small-Pieces-Christian-Queinnec/dp/0521545668)
-;;    - A practical example of this is [core.async](https://github.com/clojure/core.async/) which implements go's CSP as a library in Clojure!
-;;    - Or see our colleague, Andrew Mcveigh's talk [on adding a type checker](https://skillsmatter.com/skillscasts/10835-a-dynamic-statically-typed-contradiction) to Clojure
+;; - Demystifies programming language theory.  See the book [Lisp in Small Pieces](https://www.amazon.co.uk/Lisp-Small-Pieces-Christian-Queinnec/dp/0521545668)
 
 ;; ---
-;; # Eval / Apply
-;; ![](https://user-images.githubusercontent.com/223396/64483083-67645500-d1c2-11e9-8dec-b8f34828048c.jpg)
+;;
+^{::clerk/visibility {:code :hide}}
+(ImageIO/read (io/file "./resources/metacircular-evaluator.png"))
+
+;; [Structure & Interpretation of Computer Programs](https://xuanji.appspot.com/isicp/)
+
 ;; See also Paul Graham's [Roots of Lisp](http://www.paulgraham.com/rootsoflisp.html)
-
-;; ---
-;; # Lisp
-;;
-;; - Became 'popular' in the 1980's
-;; - Pionering work on Software & development environments
-;;   - Still unrivaled today
-
-;; ---
-;; - Lisp Machine's and the retro sci-fi future we never had...
-;;   - [Symbolics Lisp Machines Graphics Demo (1990)](https://news.ycombinator.com/item?id=36016649)
-
-;; ---
-;; # Lisp Machines
-;; The Connection Machine CM-1
-;;
-;; ![CM-1](https://www.teco.kit.edu/wp-content/uploads/2014/09/10606268_829432493743897_7185944170258321804_n.jpg)
-
-;; ---
-;; # Some big ideas in Lisp (and Clojure)
-;;
-;; - Minimal elegant core
-;; - Building programs from inside your program as a dialogue with your computer (REPL)
-;; - Homoiconic
-;;    - single representation for code and data
-;; - Macros
-;;
-
-;; ---
-;; # More legends of Lisp
-;;
-;; - [Lisp at Nasa's JPL](https://corecursive.com/lisp-in-space-with-ron-garret/)
-;; - [Essays of Richard P. Gabriel](https://dreamsongs.com/Essays.html)
-;;   - [Worse is better](https://dreamsongs.com/WorseIsBetter.html)
-;;     - [Worse is better is worse], [Is worse really better?](https://dreamsongs.com/Files/IsWorseReallyBetter.pdf), [Is worse (still) better?](https://dreamsongs.com/Files/WorseIsBetterPositionPaper.pdf), [Worse (still) is better!](https://dreamsongs.com/Files/ProWorseIsBetterPosition.pdf)
-;;   - [The art of lisp & Writing](https://dreamsongs.com/ArtOfLisp.html)
-;;   - [The why of Y](https://dreamsongs.com/Files/WhyOfY.pdf)
-;; - Paul Graham [Beating the averages](http://paulgraham.com/avg.html)
-;;   - [... other Lisp essays](http://paulgraham.com/articles.html)
-;; - [GNU Project](https://www.gnu.org/gnu/initial-announcement.html)
-;; - [The development of GNU Emacs](https://www.gnu.org/gnu/rms-lisp.html)
 
 ;; ---
 ;;
@@ -294,146 +265,423 @@
 ;;
 
 ;; ---
-;; # So what is Clojure?
+;; # Lisp: You can extend the language!
+;; See our colleague, Andrew Mcveigh's talk [on adding an experimental type checker](https://skillsmatter.com/skillscasts/10835-a-dynamic-statically-typed-contradiction) to Clojure
+
+^{::clerk/visibility {:code :hide}}
+(ImageIO/read (io/file "./resources/andrew-types.png"))
+
+;; ---
+;; # Lisp: You can extend the language!
+;; [core.async](https://github.com/clojure/core.async/) implements go's CSP as a library in Clojure!  Whilst Google needed to implement a whole new language to do this.
 ;;
-;; - Clojure is a Lisp
-;; - ...but is not a direct descendant of any prior Lisp
-;; - Unlike historic Lisps it
-;;   - Focuses on Functional Programming with immutable data
-;;   - is intentionally hosted, in that it compiles to and runs on the runtime of another language, such as the JVM
+;; See Timothy Baldridge's deep dive on [Core Async Go Macro Internals - Part I](https://www.youtube.com/watch?v=R3PZMIwXN_g) and [Part 2](https://www.youtube.com/watch?v=SI7qtuuahhU)
+^{::clerk/visibility {:code :hide}}
+(clerk/code
+ "(let [c1 (chan)
+      c2 (chan)]
+  (go (while true
+        (let [[v ch] (alts! [c1 c2])]
+          (println \"Read\" v \"from\" ch))))
+  (go (>! c1 \"hi\"))
+  (go (>! c2 \"there\")))")
 
 
 ;; ---
-;; # 2.2: The value of values
+;; # Lisp Machine's and the sci-fi future we never had...
+^{::clerk/visibility {:code :hide}}
+(clerk/row
+ (ImageIO/read (io/file "./resources/s-graphics.png"))
+ (ImageIO/read (io/file "./resources/lisp-debugger.png")))
+
+;; [Symbolics Lisp Machines Graphics Demo (1990)](https://news.ycombinator.com/item?id=36016649)
+
+;; ---
+;; # More legends of Lisp
+;;
+;; - [Lisp at Nasa's JPL](https://corecursive.com/lisp-in-space-with-ron-garret/)
+;; - [Essays of Richard P. Gabriel](https://dreamsongs.com/Essays.html)
+;;   - [Worse is better](https://dreamsongs.com/WorseIsBetter.html)
+;;     - [Worse is better is worse](https://www.dreamsongs.com/Files/worse-is-worse.pdf), [Is worse really better?](https://dreamsongs.com/Files/IsWorseReallyBetter.pdf), [Is worse (still) better?](https://dreamsongs.com/Files/WorseIsBetterPositionPaper.pdf), [Worse (still) is better!](https://dreamsongs.com/Files/ProWorseIsBetterPosition.pdf)
+;;   - [The art of lisp & Writing](https://dreamsongs.com/ArtOfLisp.html)
+;;   - [The why of Y](https://dreamsongs.com/Files/WhyOfY.pdf)
+;;   - His writings on Christopher Alexander's Design Patterns are inspirational too! (Though not relevant to this talk)
+;; - Paul Graham [Beating the averages](http://paulgraham.com/avg.html)
+;;   - [... other Lisp essays](http://paulgraham.com/articles.html)
+;; - [GNU Project](https://www.gnu.org/gnu/initial-announcement.html)
+;; - [The development of GNU Emacs](https://www.gnu.org/gnu/rms-lisp.html)
+
+;; ---
+;; # Ok, so what is Clojure then?
+;;
+;; - A modern functional programming language
+;; - Is a dialect of Lisp (but not a direct descendent of any prior Lisp)
+;; - Created in 2007
+;; - Open source (EPL license)
+;; - Compiles to Java and Runs on the JVM
+;; - Dynamically typed
+;; - Created and led by Rich Hickey
+;; - Has a strong development philosophy behind it
+
+;; ---
+;; # What else is Clojure?
+;;
+;; - ... a small but vibrant open-source community
+;;   - I recommend the [Clojurian Slack](http://clojurians.net/)
+;;   - Extremely welcoming (our female developers say great things about it too!)
+;; - a dialect of similar "hosted languages"
+;;    - [Clojure](https://clojure.org/) (official)
+;;    - [Clojurescript](https://clojurescript.org/) (official)
+;;    - [Small Clojure Interpreter](https://github.com/babashka/sci) & [Babashka](https://babashka.org/)
+;;    - [ClojureCLR](https://github.com/clojure/clojure-clr)
+;;    - [Clojure Dart](https://github.com/Tensegritics/ClojureDart) (new)
+
+;; ---
+;; # What else is Clojure?
+
+;; ---
+;; # Clojure is a boring language
+
+;; ---
+;; # Clojure is a boring language
+;;
+;; _* boring enough that you could possibly use it at work_
+;;
+;; _** about a dozen of us do!_
+
+;; ---
+;; # The best of boring
+;;
+;; - Most of Clojure Core Team work for Nubank
+;;   - Worth > $30bn (now one of the biggest banks in Brazil)
+;; - Nubank have built their business on Clojure (thousands of systems)
+;;   - Acquired the core team because they rely heavily on Clojure & [Datomic](https://www.datomic.com/)
+;; - It's reliable and predictable
+;; - Host language (java) interop is great so there are usable libraries available for almost everything
+
+;; ---
+;; # The best of boring
+;;
+;; - It changes slowly and purposefully (roughly one stable release p/year)
+;;   - Improvements are well thought out and conservative
+;; - Follows a strong philosophy of not making breaking changes
+;;   - See Rich Hickey's talk [Spec-ulation](https://www.youtube.com/watch?v=oyLBGkS5ICk)
+;;   - Two kinds of change
+;;     - Growth (accretion, relaxation, fixation)
+;;     - Breakage (requiring more or providing less)
+;;   - Embodied in tools.deps (package manager) version resolution
+;;   - language features like namespaced keywords / clojure.spec etc
+;; - The libraries and community tend to follow this advice
+;;   - It's not unusual to update every dependency in a legacy apps and have them still work
+
+;; ---
+;; ![Clojure Code retention](./resources/clojure-code-retention.png)
+
+;; ---
+;; ![Scala Code retention](./resources/scala-code-retention.png)
+
+;; ---
+;; # Stuff we've built in Clojure
+
+;; ---
+;; # [Energy Performance Cerficates](https://epc.opendatacommunities.org/)
+
+;; EPC certificates for every house & business/premise in England & Wales
+
+^{::clerk/visibility {:code :hide}}
+(ImageIO/read (io/file "./resources/epcs.png"))
+
+;; ---
+;; # Indicies of Multiple Deprivation apps
+;; Downloading by area or by postcode
+;;
+^{::clerk/visibility {:code :hide}}
+(ImageIO/read (io/file "./resources/postcode.png"))
+
+
+;; ---
+;; # Publish My Data (v3)
+;;
+;; Atlas, Drafter, Grafter-Server
+
+^{::clerk/visibility {:code :hide}}
+(ImageIO/read (io/file "./resources/scotland.png"))
+
+;; ---
+;; # Drafter
+^{::clerk/visibility {:code :hide}}
+(ImageIO/read (io/file "./resources/drafter.png"))
+
+;; ---
+;; # Publish My Data (v4)
+;; (Clojure & Clojurescript)
+
+^{::clerk/visibility {:code :hide}}
+(ImageIO/read (io/file "./resources/geo-picker.png"))
+
+;; ---
+;; # Environment Agency Asset Information System
+;; And various other systems for EA
+
+^{::clerk/visibility {:code :hide}}
+(ImageIO/read (io/file "./resources/aims.png"))
+
+;; ---
+;; # [Matcha](https://github.com/Swirrl/matcha)
+;; An in memory graph database (Clojure library)
+
+^{::clerk/visibility {:code :hide}}
+(ImageIO/read (io/file "./resources/matcha.png"))
+
+;; ---
+;; # [csv2rdf](https://github.com/Swirrl/csv2rdf)
+;; Command Line tool implementing the W3C [CSV on the Web standards](https://www.w3.org/TR/2015/REC-csv2rdf-20151217/)
+;;
+;; Thanks Lee Kitching!!
+
+^{::clerk/visibility {:code :hide}}
+(ImageIO/read (io/file "./resources/csv2rdf.png"))
+
+;; ---
+;;
+;; # The cool stuff;
+;; # Clojure is contrarian, interesting and exciting
+
+;; ---
+;; # Big ideas in Clojure
+;;
+;; 1. ✅ Simplicity/Decomplected Design
+;; 2. ✅ Lisp
+;; 3. ✅ The best bits of boring
+;; 4. Functional Programming
+;; 5. The value of values.  Immutability changes everything!
+;; 6. ~~Open extensibility~~
+;; 7. Programming as a dialogue; working inside your code ; inside out programming
+;; 8. Hosted language
+
+;; ---
+;; # What is Functional Programming?
+;; - Programming with functions
+;; - Functions vs procedures (purity)
+^{::clerk/visibility {:code :hide}}
+(clerk/tex "inc(x) = x + 1")
+^{::clerk/visibility {:code :hide}}
+(clerk/tex "inc(1) = 1 + 1")
+^{::clerk/visibility {:code :hide}}
+(clerk/tex "= 1 + 1")
+^{::clerk/visibility {:code :hide}}
+(clerk/tex "= 2")
+
+
+;; ---
+;; # What is Functional Programming?
+;;
+;; - Purity means programming with...
+;; - An absence of side effects
+;; - An absence of mutable state
+;; - Simplicity!  Nothing can change underneath you!!
+;; - No PLOP (Place Oriented Programming)
+;; - Amazing for concurrent/parallel programming
+;; - Amazing for stress reduction
+
+
+;; ---
+;; # Referential transparency
+;;
+;; > An expression is called referentially transparent if it can be replaced with its corresponding value (and vice-versa) without changing the program's behavior.[1] This requires that the expression be pure – its value must be the same for the same inputs and its evaluation must have no side effects.
+;;
+;; Allows you to refactor fearlessly.
+;;
+;; No quantum mechanics!  No spooky action at a distance!
+;;
+;; Ability to arbitrarily compose.
+
+
+;; ---
+;; # The value of values
 ;;
 ;; What is a value?
 ;;
-;; Something that doesn't change!  Examples:
-
-1
-
-
-
-
-;; ---
-;; # 2.2: The value of values
+;; Something that doesn't change, Immutable, and they evaluate to themselves.
 ;;
-;; - Immutable Persistent Datastructures
+;; If I take `42`, and add `1` to it, `42` remains unchanged.
 
 ^{::clerk/visibility {:code :hide}}
-(clerk/with-viewer mermaid-viewer {:nextjournal.clerk/width :full}
-  "flowchart LR
-    Alice{Alice} --> A
-    A --> B
-    B --> C
-    C --> D
-")
+(clerk/example 42
+               (+ 42 1)
+               42)
+
+;; Yep!  It's still `42`! 😅
 
 ;; ---
-;; # 2.2: The value of values
+;; # The value of values
 ;;
-;; - Immutable Persistent Datastructures
+;; Other primitive values...
+^{::clerk/visibility {:code :hide}}
+(clerk/example true
+               false
+               :keywords
+               :namespaced/keyword
+               :another.namespaced/keyword
+               1/3
+
+               0.25
+               'name.spaced/symbols
+               'symbols)
+
+;; ---
+;; # The value of values
+;;
+;; What is a value?
+;;
+;; ... most other things in clojure
+
 
 ^{::clerk/visibility {:code :hide}}
-(clerk/with-viewer mermaid-viewer {:nextjournal.clerk/width :full}
-  "flowchart LR
-    Alice{Alice} --> A
-    Bob{Bob} --> A
-    A --> B
-    B --> C
-    C --> D
-")
 
-;; ---
-;; # 2.2: The value of values
-;;
-;; - Immutable Persistent Datastructures
+(clerk/example [:vectors :are :like :arrays]
+               '(:lists :are :values :too)
+               {:hash "maps"
+                :key-1 1
+                :key-2 2}
+               #{:sets :deduplicate})
 
-^{::clerk/visibility {:code :hide}}
-(clerk/with-viewer mermaid-viewer {:nextjournal.clerk/width :full}
-  "flowchart LR
-    Alice{Alice} --> A
-    A --> B
-    B --> C
-    C --> D
-")
-
-
-
-
-;; ---
-;;
-;; # Clojure features
-
-
-;; ---
-;; # TODO
-
-;; ---
-;; # clojure data
-
-1
-1/2
-1.25
-
-"Strings"
-
-:keywords
-symbol
-
-'quoted-sym
-
-;; # Collection types
-
-[:vectors :are :like "arrays"]
-
-;; Vectors grow at the end
-
-'(:linked :lists)
-
-;; Linked lists naturally grow at the start
-
-;; Hashmaps
-
-{:key1 "value 1"
- :key2 "value 2"}
-
-;; Sets
-
-#{1 2 3}
-
-;; ---
-;; # Laziness
-;;
-;;
+;; Almost everything is immutable though, so can't be changed!
 
 ^{::clerk/visibility {:code :hide}}
 (clerk/with-viewer editor-sync-viewer
-  "(map inc [1 2 3 4])")
+  "(def my-data {:some {:data :here}})
+
+(assoc my-data :more :data)
+
+;;my-data
+")
+
+;; ---
+;; # Immutability changes everything
+;;
+;; State of the art Persistent Data Structures (P Bagwell + innovations by Rich Hickey)
+;;
+;; (Later copied in Scala, Haskell & Erlang)
+;; [HOPL History of Clojure Paper (p12)](https://clojure.org/about/history) [Video Lecture](https://clojure.org/about/history)
+;;
+
+^{::clerk/visibility {:code :hide}}
+(clerk/with-viewer mermaid-viewer {:nextjournal.clerk/width :full}
+  "flowchart LR
+    Alice{Alice} -.-> 1
+    Bob{Bob} -.-> head
+    head(0) --> 1
+    1 --> 2
+    2 --> 3
+    3 --> 4
+")
 
 ^{::clerk/visibility {:code :hide}}
 (clerk/with-viewer editor-sync-viewer
-  "(map str [1 2 3 4])")
+  "(def the-data '(1 2 3 4))
 
+(def alice the-data)
+
+alice
+
+;(def bob (cons 0 the-data))
+
+;bob
+
+;; what does alice see?
+
+;alice
+
+")
+
+;; ---
+;; # Your code can be a value too!
+
+^{::clerk/visibility {:code :hide}}
+(clerk/with-viewer editor-sync-viewer
+  "(def my-code '(+ 10 20))
+
+my-code
+
+;(eval my-code)
+
+; (eval (cons * (rest my-code)))
+")
+
+;; ---
+;; # Immutability changes everything
+;;
+;; [This paper](https://www.cidrdb.org/cidr2015/Papers/CIDR15_Paper16.pdf) discusses how the concept of immutability can drive improvements at many levels of the stack including applications.
+;; e.g. non-destructive photo editing, docker, infrastructure as code...
+^{::clerk/visibility {:code :hide}}
+(ImageIO/read (io/file "./resources/immutability-changes-everything.png"))
+
+
+;; ---
+;; # Programming as a dialogue
+;;
+;; Switch to editor!!
+
+;; ---
+;; # Programming as a dialogue
+;; Working inside your code
+;; - Bottom up or Top down
+;; - Rapid prototyping
+;; - Fast feedback
+;; - What about TDD?
+;;   - But in Clojure we RDD our TDD!
+
+#_(defn baz [c d]
+  (+ c d))
+
+#_(defn foo [a b]
+  (let [c (+ a b)
+        d (* c c)]
+    ;; scope capture
+    #_(sc.api/spy)
+    (baz c d)))
+
+#_(foo 10 20)
+
+
+;; ---
+;; # Laziness & Infinite Sequences
+;;
 
 (range)
 
-(repeat 100 :thing)
-
 (iterate inc 0)
 
-(map vector
-     (range)
-     (concat
-      (repeat 10 :a)
-      (repeat 10 :b)
-      (repeat 10 :c)))
+(take 10 (iterate inc 0))
+
+(repeat 100 :thing)
+
+(map str (range))
+
+(map-indexed vector (line-seq (io/reader "./notebooks/clojure_presentation.clj")))
+
+;; ---
+;; # Lazy seq caching
+;;
+;; A neat solution to making mutable resources like I/O streams appear immutable:
+^{::clerk/visibility {:code :hide}}
+(clerk/code "(defn line-seq
+\"Returns the lines of text from rdr as a lazy sequence of strings.\"
+ [^java.io.BufferedReader rdr]
+(when-let [line (.readLine rdr)]
+    (cons line (lazy-seq (line-seq rdr)))))")
+
+;; Point to the head of an (abstract) sequence of lines in a file...
+
+(def pres-lines (line-seq (io/reader "./notebooks/clojure_presentation.clj")))
+
+(count pres-lines)
+
+(first pres-lines)
+
 
 (defn spreadsheet-columns
-  "Given an alphabet string generate a lazy sequences of column names
-  e.g.
-
-  `(column-names-seq \"abcdefghijklmnopqrstuvwxyz\") ;; => (\"a\" \"b\" \"c\" ... \"aa\" \"ab\")`"
   [alphabet]
   (->> (map str alphabet)
        (iterate (fn [chars]
@@ -442,55 +690,111 @@ symbol
                     (str x y))))
        (mapcat identity)))
 
-(take 30 (drop 20 (spreadsheet-columns "abcdefghijklmnopqrstuvwxyz")))
+ (spreadsheet-columns "abcdefghijklmnopqrstuvwxyz")
+
+;; ---
+;; # Programming as a dialogue
+;;
+;; Switch to editor!!
+
+;; ---
+;; # Programming as a dialogue
+;; Working inside your code
+;; - Bottom up or Top down
+;; - Rapid prototyping
+;; - Fast feedback
+;; - What about TDD?
+;;   - But in Clojure we RDD our TDD!
 
 
+#_(defn baz [c d]
+  (+ c d))
 
+#_(defn foo [a b]
+  (let [c (+ a b)
+        d (* c c)]
+    ;; scope capture
+    (sc.api/spy)
+    (baz c d)))
+
+#_(foo 10 20)
+
+;; ---
+;; # Deep Dive!
+;; - Clojure bootstraping
+
+
+;; ---
+;; # Hosted language
+;;
+;; Clojure and it's dialects are hosted languages, and expect to
+;; interoperate with a host language.
+;;
+;; In the case of:
+;;
+;; - Clojure -> JVM (including GraalVM)
+;; - Clojurescript -> Javascript
+;; - ClojureDart -> Dart (& Flutter)
+;; - SCI -> cljc (clojure/clojurescript)
+;; - Babashka compiles SCI with GraalVM interop
+
+
+;; ---
+;; # What could I use Clojure for?
+;;
+;; - Almost everything
+;; - General purpose language
+;; - It's pretty fast too (compiled, but feels like it's interpreted)
+;; - Constrained mainly by it's host languages/runtimes (Java, Javascript, GraalVM, Dart)
+;; - Constrained mainly by your willingness to use it
+
+;; ---
+;; # But other languages have functions and a REPL too!
+;;
+;; - Mutable state makes those REPLs significantly less useful
+;; - Value semantics & Equality are a big deal here too!
+;;   - Deep copies/comparisons always work (and are always intuitive)
+;; - These properties mean you can build your program from inside it
+
+;; ---
+;; # Some cool Databases made in Clojure
+;;
+;; - Datomic (a triplestore but with transaction time)
+;; - XTDB (like Datomic but bitemporal)
+;; - Other Datalog's
+;;   - TPXImpact's [Matcha](https://github.com/Swirrl/matcha)
+;;   - [Asami](https://github.com/quoll/asami)
+;;   - [Datascript](https://github.com/tonsky/datascript)
+;;   - ...
+
+;; ---
+;; # Data science
+;;
+;; - A promising area for Clojure
+;; - [Clerk notebooks](https://github.com/nextjournal/clerk)
+;; - Language truly embraces Data
+;;
+;; - See Kira's talk at Clojure Conj!!!
+^{::clerk/visibility {:code :hide}}
+(clerk/html "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/MguatDl5u2Q\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>")
 
 ;; ---
 ;; # Books / Resources
 ;;
-;; - ![Getting Clojure](https://pragprog.com/titles/roclojure/getting-clojure/roclojure.jpg)
-;; - ![The Joy of Clojure](http://blog.fogus.me/images/joy-of-clojure-cover.jpg)
+;; - [Getting Clojure](https://pragprog.com/titles/roclojure/getting-clojure/)
+;; - [The Joy of Clojure](https://joyofclojure.github.io/)
 
 ;; ---
 ;; # Free / Resources
-;; - ![Clojure for the Brave and True](https://www.braveclojure.com/assets/images/home/book-cover.jpg)
+;; - [Clojure for the Brave and True](https://www.braveclojure.com)
 ;; - [clojure.org](https://clojure.org/)
 ;;   - ![Clojure Reference](https://clojure.org/reference)
 ;;   - ![Clojure Guides](https://clojure.org/guides)
 
-;; ---
-;; # Boring can be Interesting
-;;
-;; TODO
-;;
-
-
-;;
 
 ;; ---
-;; # Cool ideas
+;; # 🙇 Thank you!
 ;;
-;; - Functional Programming
-;; - Simplicity (but a rigorous definition)
-;; - Open for extension
-;; -
-;; - Laziness
-;; - Immutability Changes Everything (& Persistent Data structures)
-;; -
-;; - Epochal time model
-;; - Equality done right
-;; - Meta circular evaluators
-
-
-;; ---
-;; # TODO
-;;
-
-;; ---
-;; # TODO
-
 
 ;; ---
 ;; # What next?
