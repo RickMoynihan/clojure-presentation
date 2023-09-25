@@ -102,6 +102,12 @@
 ;; - I can stop and answer questions along the way
 
 ;; ---
+;; # Two doors to ideas
+;;
+;; 1. Lisp
+;; 2. Functional Programming
+
+;; ---
 ;; # 👋 Who am I anyway?
 ;;
 ;; - Rick Moynihan (Head of Engineering in D&I)
