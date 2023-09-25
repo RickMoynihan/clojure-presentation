@@ -760,8 +760,8 @@ my-code
 ;; ---
 ;; # Some cool Databases made in Clojure
 ;;
-;; - Datomic (a triplestore but with transaction time)
-;; - XTDB (like Datomic but bitemporal)
+;; - [Datomic](https://www.datomic.com/) (a triplestore but with transaction time)
+;; - [XTDB](https://www.xtdb.com/) (The cross-time database - like Datomic but bitemporal)
 ;; - Other Datalog's
 ;;   - TPXImpact's [Matcha](https://github.com/Swirrl/matcha)
 ;;   - [Asami](https://github.com/quoll/asami)
