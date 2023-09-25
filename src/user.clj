@@ -18,6 +18,6 @@
 
 ;; Build a html file from the given notebook notebooks.
 ;; See the docstring for more options.
-;;(clerk/build! {:paths ["notebooks/rule_30.clj"]})
+  (clerk/build! {:paths ["notebooks/clojure_presentation.clj"]})
 
   )
