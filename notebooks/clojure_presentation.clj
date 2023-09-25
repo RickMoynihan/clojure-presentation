@@ -253,7 +253,8 @@
 ;; ---
 ;;
 ^{::clerk/visibility {:code :hide}}
-(ImageIO/read (io/file "./resources/metacircular-evaluator.png"))
+(clerk/image  "./resources/metacircular-evaluator.png")
+
 
 ;; [Structure & Interpretation of Computer Programs](https://xuanji.appspot.com/isicp/)
 
@@ -268,7 +269,7 @@
 ;; # Lisp: You can extend the language!
 ;; See our colleague, Andrew Mcveigh's talk [on adding an experimental type checker](https://skillsmatter.com/skillscasts/10835-a-dynamic-statically-typed-contradiction) to Clojure
 
-^{::clerk/visibility {:code :hide}}
+;^{::clerk/visibility {:code :hide}}
 (ImageIO/read (io/file "./resources/andrew-types.png"))
 
 ;; ---
@@ -788,8 +789,8 @@ my-code
 ;; # Free / Resources
 ;; - [Clojure for the Brave and True](https://www.braveclojure.com)
 ;; - [clojure.org](https://clojure.org/)
-;;   - ![Clojure Reference](https://clojure.org/reference)
-;;   - ![Clojure Guides](https://clojure.org/guides)
+;; - [Clojure Reference](https://clojure.org/reference)
+;; - [Clojure Guides](https://clojure.org/guides)
 
 
 ;; ---
